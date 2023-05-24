@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Yu-Gi-Oh! Card</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel ="stylesheet" href="Yugi.css">
+
+</head>
+<body>
+  <h1>Random Yu-Gi-Oh! Card Generator</h1>
+  <div id="checkboxContainer">
+  </div>
+  <select id="startYearSelect">
+    <option value="">Select start year</option>
+  </select>
+  
+  <select id="endYearSelect">
+    <option value="">Select end year</option>
+  </select>
+  <div id="startGameButton">
+    <button id="startGameButtonID" onclick="generateRandomCard()">Generate Random Card</button>
+  </div>
+
+  <div id="cardContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
