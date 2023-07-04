@@ -1,13 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
+
+@font-face {
+  font-family: 'YugiFont';
+  src: url('fonts/Matrix-Bold.ttf') format('truetype');
+}
+
+  body {
+    font-family: 'YugiFont';
     text-align: center;
   }
   
   h1 {
+    font-family: 'YugiFont';
     color: #333;
+  }
+
+  html {
+    font-family: 'YugiFont', Arial, sans-serif;
   }
   
   button {
+    font-family: 'YugiFont';
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -21,7 +33,7 @@ body {
   }
   
   #cardContainer {
-    
+    font-family: 'YugiFont';
     display: flex;
     align-items: center;
     justify-content: center;

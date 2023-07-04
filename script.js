@@ -162,7 +162,8 @@ async function generateRandomCard() {
       console.log(data.misc_info[0].tcg_date + " This is the start " + chosenStartYear + " tis is the end " + chosenEndYear);
       const cardId = data.id;
       const cardName = data.name;
-      const cardImage = `card_images/${cardId}.jpg`;
+      //const cardImage = 'https://www.dropbox.com/s/bmh7xq8fs283ijj/2511.jpg?dl=0';
+      const cardImage = `https://fh-yugiguessr-images.s3.eu-north-1.amazonaws.com/card_images/${cardId}.jpg`;
       const cardBack = `Card-back.png`;
       const cardType = data.type;
 
@@ -287,9 +288,9 @@ async function generateRandomCard() {
         }
         break;
       case "art":
-        optionsArray.push(`<img src="card_images_cropped/${cardData.id}.jpg" alt=${cardData.name}>`);
+        optionsArray.push(`<img src="https://fh-yugiguessr-images.s3.eu-north-1.amazonaws.com/card_images_cropped/card_images_cropped/${cardData.id}.jpg" alt=${cardData.name}>`);
         for(var i = 0; i < 2; i++){
-          optionsArray.push(`<img src="card_images_cropped/${randomCardData[i].id}.jpg" alt=${randomCardData[i].name}>`);
+          optionsArray.push(`<img src="https://fh-yugiguessr-images.s3.eu-north-1.amazonaws.com/card_images_cropped/card_images_cropped/${randomCardData[i].id}.jpg" alt=${randomCardData[i].name}>`);
         }
         break;
       case "attackDef":
