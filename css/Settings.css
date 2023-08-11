@@ -1,0 +1,87 @@
+.custom-select {
+    width: 200px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(63, 63, 202);
+    color: rgb(247, 0, 255);
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 1%;
+    font-display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    padding: 10px;
+  }
+  
+
+  .custom-select:hover {
+
+  }
+
+  .custom-select select:focus {
+    border: 1px solid #007bff;
+  }
+  .custom-check {
+    width: 40px;
+    height: 30px;
+  }
+/* Basic styling for the custom radio button container */
+.custom-radio {
+    display: block; /* Display each radio button on a new line */
+    margin-bottom: 10px; /* Add spacing between radio buttons */
+  }
+
+  /* Hide the default radio button */
+  .custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Style the custom radio button */
+  .radiomark {
+    position: relative; /* Adjust position for the radiomark */
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+
+  /* Style the checked custom radio button */
+  .custom-radio input:checked + .radiomark {
+    background-color: #007bff;
+  }
+
+  /* Create the radiomark icon */
+  .radiomark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  /* Display the radiomark icon when radio button is checked */
+  .custom-radio input:checked + .radiomark::after {
+    display: block;
+  }
+
+  #gameSettingsContainer{
+    position: relative;
+    height: 619px; 
+    max-width: 700px;
+    background-color: lightblue;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    
+
+  }

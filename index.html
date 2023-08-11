@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Random Yu-Gi-Oh! Card</title>
+  <head>
+    <title>Random Yu-Gi-Oh! Card</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/Yugi.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/Settings.css" />
+
+
+    <script type ="module" defer src="scripts/script.js"></script>
+    <script type ="module" defer src="scripts/InitializeHtml.js"></script>
+    <script type ="module" defer src="scripts/clickHandlers.js"></script>
+
+  </head>
+  <body>
+    <h1 class="text-center p-3">Yu-Gi-Oh! Guessing Game</h1>
+    <div id="gameSettingsContainer"class="container">
+      <h4 class="text-center p-5">Settings</h4>
+            
+      <div class="d-flex justify-content-center p-3 " id="checkboxContainer">
+      
+
+      </div>
+      <div class="d-flex justify-content-center ">  
+        <select id="startYearSelect" class="custom-select text-center">
+          <option value="">Select start year</option>
+        </select>
+    
+        <select id="endYearSelect" class="custom-select text-center">
+          <option class="text-center">Select end year</option>
+        </select>
+      </div>
+      <div class="d-flex justify-content-center p-5" id="startGameButton">
+        <button class="btn btn-primary" id="startGameButtonID">
+          Generate Random Card
+        </button>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center ">
+      <div id="cardContainer"></divclass=>
+    </div>
   
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel ="stylesheet" href="Yugi.css">
-
-</head>
-<body>
-  <h1>Random Yu-Gi-Oh! Card Generator</h1>
-  <div id="checkboxContainer">
-  </div>
-  <select id="startYearSelect">
-    <option value="">Select start year</option>
-  </select>
-  
-  <select id="endYearSelect">
-    <option value="">Select end year</option>
-  </select>
-  <div id="startGameButton">
-    <button id="startGameButtonID" onclick="generateRandomCard()">Generate Random Card</button>
-  </div>
-
-  <div id="cardContainer"></div>
-
-  <script src="script.js"></script>
-</body>
+  </body>
 </html>
