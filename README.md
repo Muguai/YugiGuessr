@@ -5,4 +5,4 @@
  
  Images and Card data have been taken from YugiohPro API -> https://ygoprodeck.com/api-guide/
 
- WEBSITE LINK ---> yugi-guessr.vercel.app
+ WEBSITE LINK ---> [yugi-guessr.vercel.app](https://yugi-guessr.vercel.app/)https://yugi-guessr.vercel.app/
