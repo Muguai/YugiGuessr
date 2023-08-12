@@ -61,8 +61,8 @@
     justify-content: center;
     position: absolute;
     
-    width: 420px;
-    height: 619px;
+    width: 419px;
+    height: 620px;
     
     margin: 0 auto;
     transform-style: preserve-3d;
@@ -75,11 +75,16 @@
     backface-visibility: hidden;
     pointer-events: none;
     transform: rotateY(180deg);
+    pointer-events: none;
+    user-select: none;
   }
   .cardBack {
     
     position: absolute;
     backface-visibility: hidden;
+    pointer-events: none;
+    
+    user-select: none;
   }
 
   .optionsContainer {

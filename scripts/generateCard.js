@@ -93,10 +93,10 @@ export async function generateRandomCard() {
     const blurredImage = `
         <div class="imageContainer" id="spawnedContainer">    
           <div class="cardBack">
-            <img src="${cardBack}" alt="Card Back" />
+            <img draggable="false" src="${cardBack}" alt="Card Back" />
           </div>
           <div class="cardFront">
-            <img src="${cardImage}" alt="${cardName}" />
+            <img draggable="false" src="${cardImage}" alt="${cardName}" />
             ${getBlurOverlay(enumValue)}
           </div>
         </div>
