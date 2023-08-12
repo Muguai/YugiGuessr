@@ -1,8 +1,6 @@
-import {generateRandomCard } from "./script.js";
+import { blurOptions } from "./blurUtils.js";
 
-export const blurOptions = ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type', 'all'];
-
-
+/*
 function generateCheckboxMarkup(option) {
     return `
         <input class="custom-check" type="checkbox" id="checkbox_${option}" name="blurOption" value="${option}" checked>
@@ -12,8 +10,8 @@ function generateCheckboxMarkup(option) {
 
 function generateRadioMarkup(option) {
     return `
-        <div class="custom-radio-group">
-          <input type="radio" id="radio_${option}" name="blurOption" value="${option}" checked>
+        <div>
+          <input type="radio" id="radio_${option}" name="blurOption" value="${option}">
           <label for="radio_${option}">${option}</label>
         </div>
         
@@ -34,7 +32,19 @@ export const checkboxOptions = generateCheckboxOptions(blurOptions);
 // Insert the checkbox options into the HTML
 const checkboxContainer = document.getElementById('checkboxContainer');
 checkboxContainer.innerHTML = checkboxOptions;
+*/
 
+const blurOptionSelect = document.getElementById('blurOptionSelect');
+
+for (let blur of blurOptions) {
+    const option = document.createElement('option');
+    option.value = blur;
+    option.text = blur;
+    if (blur === "random") {
+        option.selected = true;
+    }
+    blurOptionSelect.appendChild(option);
+}
 
 
 const startYearSelect = document.getElementById('startYearSelect');
