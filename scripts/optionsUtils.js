@@ -1,3 +1,4 @@
+import { capitalizeFirstLetter } from "./blurUtils.js";
 import { questionNum } from "./gameLoop.js";
 import { correctAnswer } from "./generateCard.js";
 
@@ -62,9 +63,9 @@ export function handleOptionClick(option) {
     //console.log("Selected option index:", selectedOptionIndex);
 }
 
-export function makeOptions(optionsContainer, options, containsImage) {
+export function makeOptions(optionsContainer, options, containsImage, enumValue) {
     optionsContainer.innerHTML = `
-              <h3 class="text-center">Question ${questionNum}</h3>
+              <h3 class="text-center">Guess the ${capitalizeFirstLetter(enumValue)} - #${questionNum}</h3>
               <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[0]}</div>
               <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[1]}</div>
               <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[2]}</div>

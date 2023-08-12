@@ -1,4 +1,4 @@
-import { blurOptions } from "./blurUtils.js";
+import { blurOptions, capitalizeFirstLetter } from "./blurUtils.js";
 
 /*
 function generateCheckboxMarkup(option) {
@@ -39,7 +39,7 @@ const blurOptionSelect = document.getElementById('blurOptionSelect');
 for (let blur of blurOptions) {
     const option = document.createElement('option');
     option.value = blur;
-    option.text = blur;
+    option.text = capitalizeFirstLetter(blur);
     if (blur === "random") {
         option.selected = true;
     }

@@ -1,4 +1,5 @@
 import { chosenEndYear, chosenStartYear } from "./InitializeHtml.js";
+import { capitalizeFirstLetter } from "./blurUtils.js";
 import { generateRandomCard } from "./generateCard.js";
 import { handleOptionClick } from "./optionsUtils.js";
 
@@ -78,7 +79,7 @@ async function endOfGame(){
     let bluredValue = blurOptionSelect.value;
    
     const blurValueElement = document.getElementById('blurValue');
-    blurValueElement.textContent = bluredValue;
+    blurValueElement.textContent = capitalizeFirstLetter(bluredValue);
 
     // Show the game over screen
     const gameOverScreen = document.getElementById('gameOverScreen');

@@ -126,10 +126,9 @@ export async function generateRandomCard() {
         optionsContainer.classList.add('optionsContainer');
         console.log("This is the options array " + optionsArray);
         const containsImage = (enumValue == 'art');
-        const constainsEffect = (enumValue == 'effect');
         correctAnswer = optionsArray[0];
         optionsArray = shuffleArray(optionsArray);
-        makeOptions(optionsContainer, optionsArray, containsImage, constainsEffect);
+        makeOptions(optionsContainer, optionsArray, containsImage, enumValue);
         cardContainer.appendChild(optionsContainer);
         setTimeout(() => {
           optionsContainer.style.right = '20%';

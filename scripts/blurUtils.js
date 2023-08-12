@@ -110,3 +110,14 @@ export function getBlurOverlay(enumValue) {
 
     return blurOverlay;
 }
+
+export function capitalizeFirstLetter(inputString) {
+    if (typeof inputString !== 'string' || inputString.length === 0) {
+      return inputString; // Return input as is if it's not a non-empty string
+    }
+  
+    const firstLetter = inputString[0].toUpperCase();
+    const restOfString = inputString.slice(1);
+  
+    return firstLetter + restOfString;
+  }
