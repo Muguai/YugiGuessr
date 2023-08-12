@@ -86,7 +86,8 @@
     position: absolute;
     right: -50%;
     top: 20%;
-    
+    font-family: 'YugiFont';
+
     margin: 0 auto;
     background-color: lightblue;
     border-radius: 10px;
@@ -133,7 +134,7 @@
   }
 
   .optionsContainer .option:hover {
-    background-color: rgb(27, 72, 235);
+    border: thick solid rgb(27, 72, 235);
   }
 
   .optionsContainer .option:single-button {

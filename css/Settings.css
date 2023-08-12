@@ -1,4 +1,10 @@
+@font-face {
+  font-family: 'YugiFont';
+  src: url('../fonts/Matrix-Bold.ttf') format('truetype');
+}
+
 .custom-select {
+    font-family: 'YugiFont';
     width: 200px;
     overflow: hidden;
     border: 1px solid #ccc;
@@ -26,6 +32,8 @@
 
 
   #gameSettingsContainer{
+    font-family: 'YugiFont';
+
     position: fixed;
     height: 625px; 
     max-width: 700px;
@@ -43,6 +51,7 @@
   }
 
   #gameOverScreen {
+    font-family: YugiFont;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -61,4 +70,17 @@
 
 #continueButton {
     margin-top: 10px;
+    color: lightblue;
+    background-color:  blue;
+
+}
+
+#startGameButtonID {
+  color: lightblue;
+  background-color:  blue;
+  transition: scale ease 0.5s;
+}
+
+#startGameButtonID:hover{
+  scale: 1.2;
 }

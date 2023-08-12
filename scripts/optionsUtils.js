@@ -64,10 +64,10 @@ export function handleOptionClick(option) {
 
 export function makeOptions(optionsContainer, options, containsImage) {
     optionsContainer.innerHTML = `
-              <h3>Question ${questionNum}</h3>
-              <div class="option ${containsImage ? 'center' : 'overflow-auto'}">${options[0]}</div>
-              <div class="option ${containsImage ? 'center' : 'overflow-auto'}">${options[1]}</div>
-              <div class="option ${containsImage ? 'center' : 'overflow-auto'}">${options[2]}</div>
+              <h3 class="text-center">Question ${questionNum}</h3>
+              <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[0]}</div>
+              <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[1]}</div>
+              <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[2]}</div>
               `;
 
     const optionElements = optionsContainer.querySelectorAll('.option');
