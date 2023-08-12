@@ -7,6 +7,22 @@
   body {
     font-family: 'YugiFont';
     text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #00f2fe, #4facfe, #00f2fe);
+    background-size: 200% 100%;
+    animation: gradientScroll 40s linear infinite;
+    overflow: hidden;
+  }
+
+  @keyframes gradientScroll {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
   
   h1 {
@@ -72,7 +88,7 @@
     top: 20%;
     
     margin: 0 auto;
-    background-color: #f1f1f1;
+    background-color: lightblue;
     border-radius: 10px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
     width: 420px; 
@@ -94,7 +110,7 @@
     border-radius: 6px;
     
     height: 180px;
-    background-color: #e0e0e0;
+    background-color: rgb(65, 164, 196);
   }
 
   .optionsContainer .option.overflow-auto {
@@ -117,7 +133,7 @@
   }
 
   .optionsContainer .option:hover {
-    background-color: #d0d0d0;
+    background-color: rgb(27, 72, 235);
   }
 
   .optionsContainer .option:single-button {

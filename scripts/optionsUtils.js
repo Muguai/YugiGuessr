@@ -6,7 +6,7 @@ export function handleOptionClick(option) {
     // Reset the color of all options
     var options = document.getElementsByClassName("option");
     for (var i = 0; i < options.length; i++) {
-        options[i].style.backgroundColor = "#e0e0e0";
+        options[i].style.backgroundColor = "rgb(65, 164, 196)";
         options[i].style.border = "none";
         options[i].style.pointerEvents = "none";
     }
@@ -16,6 +16,8 @@ export function handleOptionClick(option) {
 
     const containsImage = option.querySelector('img') !== null;
 
+    
+
     // Get the string for the entire img element inside the div
     const imgString = containsImage ? option.querySelector('img').outerHTML : '';
     if (containsImage) {
@@ -23,18 +25,18 @@ export function handleOptionClick(option) {
         const correctAnswerAltered = correctAnswer.match(/src="([^"]+)"/)[1];
         console.log("This is the selected image " + imgString + " This is the correct answer " + correctAnswerAltered);
         if (correctAnswerAltered == matchSRC1) {
-            option.style.border = "4px solid green";
+            option.style.border = "5px solid green";
             return true;
         } else {
             for (var i = 0; i < options.length; i++) {
                 const imgString = options[i].querySelector('img').outerHTML;
                 const matchSRC2 = imgString.match(/src="([^"]+)"/)[1];
                 if (matchSRC2 == correctAnswerAltered)
-                    options[i].style.border = "4px solid green"
+                    options[i].style.border = "5px solid green"
             }
 
             console.log()
-            option.style.border = "4px solid red";
+            option.style.border = "5px solid red";
             return false;
         }
     }
@@ -42,16 +44,16 @@ export function handleOptionClick(option) {
     //console.log("This is the selected text " + selectedOptionText);
 
     if (selectedOptionText == correctAnswer) {
-        option.style.border = "4px solid green";
+        option.style.border = "5px solid green";
         return true;
     } else {
         for (var i = 0; i < options.length; i++) {
             if (options[i].textContent == correctAnswer)
-                options[i].style.border = "4px solid green";
+                options[i].style.border = "5px solid green";
         }
         //options[correctAnswer].style.border = "4px solid green";
         console.log()
-        option.style.border = "4px solid red";
+        option.style.border = "5px solid red";
         return false;
 
     }
