@@ -88,7 +88,7 @@ export function getBlurOverlay(enumValue) {
             blurOverlay = `<div class="blurCardNameOverlay"></div><div class="blurEffectOverlay"></div>`;
             break;
         case 'effect':
-            blurOverlay = `<div class="blurEffectOverlay"></div>`;
+            blurOverlay = `<div class="blurEffectOverlay"></div><div class="blurTypeOverlay"></div><div class="blurAttributeOverlay"></div>`;
             break;
         case 'attribute':
             blurOverlay = `<div class="blurAttributeOverlay"></div>`;

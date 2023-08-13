@@ -156,22 +156,22 @@
   
   .blurAttackDefOverlay {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    bottom: 3%;
+    right: 4%;
     
-    width: 45%;
-    height: 6%; /* Adjust the height to control the blurred area */
+    width: 46%;
+    height: 9%; /* Adjust the height to control the blurred area */
     background: rgba(0, 0, 0, 1.0);
     filter: blur(8px) ; 
   }
 
   .blurCardNameOverlay {
     position: absolute;
-    top: 4%;
+    top: 3%;
     left: 5%;
     
     width: 80%;
-    height: 8%; /* Adjust the height to control the blurred area */
+    height: 10%; /* Adjust the height to control the blurred area */
     background: rgba(0, 0, 0, 1.0); /* Adjust the background color and opacity */
     filter: blur(8px) ; /* Adjust the blur radius */
   }
@@ -189,44 +189,44 @@
 
   .blurAttributeOverlay {
     position: absolute;
-    top: 3%;
-    right: 4%;
+    top: 2.5%;
+    right: 3%;
     
-    width: 15%;
-    height: 10%; /* Adjust the height to control the blurred area */
+    width: 16%;
+    height: 11%; /* Adjust the height to control the blurred area */
     background: rgba(0, 0, 0, 1.0); /* Adjust the background color and opacity */
     filter: blur(8px) ; /* Adjust the blur radius */
   }
 
   .blurLevelOverlay {
     position: absolute;
-    top: 11%;
+    top: 10%;
     right: 5%;
     
     width: 90%;
-    height: 7%; /* Adjust the height to control the blurred area */
+    height: 10%; /* Adjust the height to control the blurred area */
     background: rgba(0, 0, 0, 1.0); /* Adjust the background color and opacity */
     filter: blur(8px) ; /* Adjust the blur radius */
   }
 
   .blurArtOverlay {
     position: absolute;
-    top: 16%;
+    top: 15%;
     right: 5%;
     
     width: 90%;
-    height: 56%; /* Adjust the height to control the blurred area */
+    height: 59%; /* Adjust the height to control the blurred area */
     background: rgba(0, 0, 0, 1.0); /* Adjust the background color and opacity */
     filter: blur(8px) ; /* Adjust the blur radius */
   }
 
   .blurTypeOverlay {
     position: absolute;
-    bottom: 20%;
+    bottom: 19%;
     right: 5%;
     
     width: 90%;
-    height: 7%; /* Adjust the height to control the blurred area */
+    height: 9%; /* Adjust the height to control the blurred area */
     background: rgba(0, 0, 0, 1.0); /* Adjust the background color and opacity */
     filter: blur(8px) ; /* Adjust the blur radius */
   }
