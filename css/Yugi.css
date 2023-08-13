@@ -178,11 +178,11 @@
 
   .blurEffectOverlay {
     position: absolute;
-    bottom: 8%;
-    right: 5%;
+    bottom: 4%;
+    right: 3%;
     
-    width: 90%;
-    height: 18%; /* Adjust the height to control the blurred area */
+    width: 94%;
+    height: 25%; /* Adjust the height to control the blurred area */
     background: rgba(0, 0, 0, 1.0); /* Adjust the background color and opacity */
     filter: blur(8px) ; /* Adjust the blur radius */
   }
