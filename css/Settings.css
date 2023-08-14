@@ -78,6 +78,7 @@
 #startGameButtonID {
   color: lightblue;
   background-color:  blue;
+  width: 40%;
   transition: scale ease 0.5s;
 }
 

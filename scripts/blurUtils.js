@@ -41,11 +41,6 @@ export function getBlurEnumsByCardType(cardType) {
         case "Gemini Monster":
         case "Normal Monster":
         case "Normal Tuner Monster":
-        case "Pendulum Effect Monster":
-        case "Pendulum Effect Ritual Monster":
-        case "Pendulum Flip Effect Monster":
-        case "Pendulum Normal Monster":
-        case "Pendulum Tuner Effect Monster":
         case "Ritual Effect Monster":
         case "Ritual Monster":
             return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
@@ -57,15 +52,24 @@ export function getBlurEnumsByCardType(cardType) {
 
         // Extra Deck Types
         case "Fusion Monster":
-        case "Link Monster":
-        case "Pendulum Effect Fusion Monster":
         case "Synchro Monster":
-        case "Synchro Pendulum Effect Monster":
         case "Synchro Tuner Monster":
-        case "XYZ Monster":
-        case "XYZ Pendulum Effect Monster":
             return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
+        
+        
+        case "XYZ Monster":
+        case "XYZ Pendulum Effect Monster":       
+        case "Synchro Pendulum Effect Monster": 
+        case "Pendulum Effect Fusion Monster":      
+        case "Pendulum Effect Monster":
+        case "Pendulum Effect Ritual Monster":
+        case "Pendulum Flip Effect Monster":
+        case "Pendulum Normal Monster":
+        case "Pendulum Tuner Effect Monster":
+            return ['attribute', 'level', 'cardName', 'art', 'attackDef', 'type'];
 
+        case "Link Monster":
+            return ['attribute', 'effect', 'cardName', 'art', 'attackDef', 'type'];
         // Other Types
         case "Skill Card":
             return ['cardName', 'art', 'effect'];

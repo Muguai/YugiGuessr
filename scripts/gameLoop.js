@@ -1,5 +1,5 @@
 import { chosenEndYear, chosenStartYear } from "./InitializeHtml.js";
-import { capitalizeFirstLetter } from "./blurUtils.js";
+import { blurOptions, capitalizeFirstLetter } from "./blurUtils.js";
 import { generateRandomCard } from "./generateCard.js";
 import { handleOptionClick } from "./optionsUtils.js";
 
@@ -60,6 +60,8 @@ async function endOfGame() {
     const existingOption = document.getElementById('optionsContainID');
     const cardContainerBefore = document.getElementById('cardContainer');
 
+    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     if (existingCard) {
         existingCard.style.left = '-50%';
