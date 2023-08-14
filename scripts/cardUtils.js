@@ -158,7 +158,10 @@ export function getRandomCardData(filterProperty = [], filterValues = [], includ
         case "attribute":
         case "attackDef":
         case "type":
-          return [['type'], [card.type], true];
+          if(card.archetype !== undefined && tries < 5)
+            return [['type', 'archetype'], [card.type, card.archetype] , true]; 
+          else
+            return [['type'], [card.type], true];
         case "effect": 
             return [['type', 'race'], [card.type, card.race] , true]; 
         case "cardName":
