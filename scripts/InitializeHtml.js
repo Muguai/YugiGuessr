@@ -64,6 +64,9 @@ for (let year = 2002; year <= 2023; year++) {
     endYearSelect.appendChild(option.cloneNode(true));
 }
 
+startYearSelect.value = 2002;
+endYearSelect.value = 2023;
+
 // Event listener for startYearSelect change
 startYearSelect.addEventListener('change', () => {
     const startYear = parseInt(startYearSelect.value);

@@ -22,7 +22,6 @@ async function gameLoop() {
         setOptionsListeners();
     }, 1700);
 
-
 }
 
 function setOptionsListeners() {
@@ -34,10 +33,6 @@ function setOptionsListeners() {
             setOptionsListeners();
         
         for (let i = 0; i < options.length; i++) {
-
-            if(options[i] === undefined || options[i] === null)
-                setOptionsListeners();
-
             options[i].addEventListener("click", () => {
                 console.log("EventListener Here");
                 const isCorrect = handleOptionClick(options[i]);
