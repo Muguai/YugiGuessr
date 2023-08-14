@@ -1,5 +1,5 @@
 import { chosenEndYear, chosenStartYear } from "./InitializeHtml.js";
-import { blurOptions, capitalizeFirstLetter } from "./blurUtils.js";
+import { capitalizeFirstLetter } from "./blurUtils.js";
 import { generateRandomCard } from "./generateCard.js";
 import { handleOptionClick } from "./optionsUtils.js";
 
@@ -15,8 +15,6 @@ function startGame() {
 
 async function gameLoop() {
     await generateRandomCard();
-    console.log("hejho");
-
 
     setTimeout(() => {
         setOptionsListeners();
@@ -61,7 +59,7 @@ async function endOfGame() {
     const cardContainerBefore = document.getElementById('cardContainer');
 
     
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
     if (existingCard) {
         existingCard.style.left = '-50%';
@@ -73,7 +71,6 @@ async function endOfGame() {
     }
 
 
-    // Display the final score on the game over screen
     const scoreValueElement = document.getElementById('scoreValue');
     scoreValueElement.textContent = questionNum - 1;
 
@@ -93,25 +90,17 @@ async function endOfGame() {
     const blurValueElement = document.getElementById('blurValue');
     blurValueElement.textContent = capitalizeFirstLetter(bluredValue);
 
-    // Show the game over screen
     const gameOverScreen = document.getElementById('gameOverScreen');
     gameOverScreen.style.opacity = "1";
     gameOverScreen.style.pointerEvents = 'all';
 
-
-    // Handle the continue button click
     const continueButton = document.getElementById('continueButton');
     continueButton.addEventListener('click', () => {
-        // Hide the game over screen
         gameOverScreen.style.opacity = "0";
         gameOverScreen.style.pointerEvents = 'none';
 
-
-        // Move up the game settings
         const gameSettingsContainer = document.getElementById('gameSettingsContainer');
         gameSettingsContainer.style.top = '50%';
-        // Your other logic for continuing the game
-        // ...
     });
 }
 

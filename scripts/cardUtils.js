@@ -144,7 +144,6 @@ export function getRandomCardData(filterProperty = [], filterValues = [], includ
         break;
   
       default:
-        let blurOverlay = '';
         break;
     }
   
@@ -153,52 +152,23 @@ export function getRandomCardData(filterProperty = [], filterValues = [], includ
   }
 
 
-  export function getRandomSimiliarCard(cardType) {
-    switch (cardType) {
-        // Main Deck Types
-        case "Effect Monster":
-          return ['Effect Monster'];
-        case "Flip Effect Monster":
-        case "Flip Tuner Effect Monster":
-        case "Gemini Monster":
-        case "Normal Monster":
-        case "Normal Tuner Monster":
-        case "Ritual Effect Monster":
-        case "Ritual Monster":
-            return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
-
-        // Spell and Trap Cards
-        case "Spell Card":
-        case "Trap Card":
-            return ['effect', 'cardName', 'art'];
-
-        // Extra Deck Types
-        case "Fusion Monster":
-        case "Synchro Monster":
-        case "Synchro Tuner Monster":
-            return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
+  export function getRandomSimiliarCard(enumValue, card, tries) {
+    switch (enumValue) {
+        case "level": 
+        case "attribute":
+        case "attackDef":
+        case "type":
+          return [['type'], [card.type], true];
+        case "effect": 
+            return [['type', 'race'], [card.type, card.race] , true]; 
+        case "cardName":
+        case "art":
+            if(card.archetype !== undefined && tries < 3)
+              return [['type', 'archetype'], [card.type, card.archetype] , true]; 
+            else if(card.archetype !== undefined && tries < 6)
+              return [['archetype'], [card.archetype] , true]; 
+            else
+              return [['type', 'race'], [card.type, card.race] , true]; 
         
-        
-        case "XYZ Monster":
-        case "XYZ Pendulum Effect Monster":       
-        case "Synchro Pendulum Effect Monster": 
-        case "Pendulum Effect Fusion Monster":      
-        case "Pendulum Effect Monster":
-        case "Pendulum Effect Ritual Monster":
-        case "Pendulum Flip Effect Monster":
-        case "Pendulum Normal Monster":
-        case "Pendulum Tuner Effect Monster":
-            return ['attribute', 'level', 'cardName', 'art', 'attackDef', 'type'];
-
-        case "Link Monster":
-            return ['attribute', 'effect', 'cardName', 'art', 'attackDef', 'type'];
-        // Other Types
-        case "Skill Card":
-            return ['cardName', 'art', 'effect'];
-        case "Token":
-            return ['attribute', 'level', 'cardName', 'art', 'attackDef', 'type'];
-
-        default:
-            return ['cardName', 'art'];
     }
 }

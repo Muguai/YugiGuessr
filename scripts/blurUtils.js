@@ -1,4 +1,3 @@
-
 export const blurOptions = ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type', 'random'];
 
 export function getRandomEnum(blurEnums) {
@@ -32,52 +31,31 @@ export function getSelectedBlurOptions(selectedBlurEnums) {
 }
 
 
-export function getBlurEnumsByCardType(cardType) {
-    switch (cardType) {
+export function extraFiltersBasedOnBlurEnum(blurEnum) {
+    switch (blurEnum) {
         // Main Deck Types
-        case "Effect Monster":
-        case "Flip Effect Monster":
-        case "Flip Tuner Effect Monster":
-        case "Gemini Monster":
-        case "Normal Monster":
-        case "Normal Tuner Monster":
-        case "Ritual Effect Monster":
-        case "Ritual Monster":
-            return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
-
-        // Spell and Trap Cards
-        case "Spell Card":
-        case "Trap Card":
-            return ['effect', 'cardName', 'art'];
-
-        // Extra Deck Types
-        case "Fusion Monster":
-        case "Synchro Monster":
-        case "Synchro Tuner Monster":
-            return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
-        
-        
-        case "XYZ Monster":
-        case "XYZ Pendulum Effect Monster":       
-        case "Synchro Pendulum Effect Monster": 
-        case "Pendulum Effect Fusion Monster":      
-        case "Pendulum Effect Monster":
-        case "Pendulum Effect Ritual Monster":
-        case "Pendulum Flip Effect Monster":
-        case "Pendulum Normal Monster":
-        case "Pendulum Tuner Effect Monster":
-            return ['attribute', 'level', 'cardName', 'art', 'attackDef', 'type'];
-
-        case "Link Monster":
-            return ['attribute', 'effect', 'cardName', 'art', 'attackDef', 'type'];
-        // Other Types
-        case "Skill Card":
-            return ['cardName', 'art', 'effect'];
-        case "Token":
-            return ['attribute', 'level', 'cardName', 'art', 'attackDef', 'type'];
-
+        case "level":
+            return ['Spell Card', 'Trap Card', 'Link Monster', 'XYZ Monster'
+            , "XYZ Pendulum Effect Monster"];
+        case "attribute":
+        case "attackDef":
+        case "type":
+            return ['Spell Card', 'Trap Card'];
+        case "effect":
+            return ['XYZ Monster'
+            , "XYZ Pendulum Effect Monster",       
+            , "Synchro Pendulum Effect Monster"
+            , "Pendulum Effect Fusion Monster"      
+            , "Pendulum Effect Monster"
+            , "Pendulum Effect Ritual Monster"
+            , "Pendulum Flip Effect Monster"
+            , "Pendulum Normal Monster"
+            , "Pendulum Tuner Effect Monster"]
+        case "art":
+        case "cardName":
+            [];
         default:
-            return ['cardName', 'art'];
+            return [];
     }
 }
 
@@ -117,7 +95,7 @@ export function getBlurOverlay(enumValue) {
 
 export function capitalizeFirstLetter(inputString) {
     if (typeof inputString !== 'string' || inputString.length === 0) {
-      return inputString; // Return input as is if it's not a non-empty string
+      return inputString;
     }
   
     const firstLetter = inputString[0].toUpperCase();

@@ -134,7 +134,7 @@ export async function getAllOptions(questionEnum, cardData, randomCardData) {
             optionsArray.push(race);
             for (var i = 0; i < 2; i++) {
                 const randomRace = randomCardData[i].race === null || randomCardData[i].race === undefined ? "None" : randomCardData[i].race;
-                optionsArray.push(randomCardData[i].race);
+                optionsArray.push(randomRace);
             }
             break;
         default:
