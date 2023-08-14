@@ -12,13 +12,10 @@ export async function generateRandomCard() {
     const existingCard = document.getElementById('spawnedContainer');
     const existingOption = document.getElementById('optionsContainID');
     const button = document.getElementById("startGameButtonID");
-
-    // Disable the button
     button.disabled = true;
 
-
     document.body.style.overflow = 'hidden';
-    // Move the existing card to the bottom of the screen
+
     if (existingCard) {
       existingCard.style.top = '200%';
       existingOption.style.top = '200%';
@@ -33,12 +30,12 @@ export async function generateRandomCard() {
     const selectedBlurOptions = getSelectedBlurOptions(blurOptions);
     const enumValue = getRandomEnum(selectedBlurOptions);
 
-    let guessfilterProperty = "noFilter";
+    let guessfilterProperty = [];
     let guessfilterValues = [];
     let guessincludeFilter = true;
 
     if (getBlurEnumsByCardType("Spell Card").includes(enumValue) == false) {
-      guessfilterProperty = "type";
+      guessfilterProperty = ["type"];
       guessfilterValues = ["Spell Card", "Trap Card"];
       guessincludeFilter = false;
     }
@@ -52,7 +49,6 @@ export async function generateRandomCard() {
   
     const cardId = data.id ;
     const cardName = data.name === undefined || data.id === null ? "No Name" : data.name;
-    //const cardImage = 'https://www.dropbox.com/s/bmh7xq8fs283ijj/2511.jpg?dl=0';
     const cardImage = `https://fh-yugiguessr-images.s3.eu-north-1.amazonaws.com/card_images/${cardId}.jpg`;
     const cardBack = `Card-back.png`;
     const cardType = data.type;
@@ -62,7 +58,7 @@ export async function generateRandomCard() {
       var tries = 0;
       if (getBlurEnumsByCardType("Spell Card").includes(enumValue)) {
         while (true) {
-          const random = await getRandomCardData("type", [cardType], true, [chosenStartYear, chosenEndYear], true);
+          const random = await getRandomCardData(["type"], [cardType], true, [chosenStartYear, chosenEndYear], true);
           var same = compareRandom(data, randomCardsData, random, enumValue);
           if (same == false) {
             randomCardsData[i] = random;
@@ -76,7 +72,7 @@ export async function generateRandomCard() {
         }
       } else {
         while (true) {
-          const random = await getRandomCardData("type", ["Spell Card", "Trap Card"], false, [chosenStartYear, chosenEndYear], true);
+          const random = await getRandomCardData(["type"], ["Spell Card", "Trap Card"], false, [chosenStartYear, chosenEndYear], true);
           var same = compareRandom(data, randomCardsData, random, enumValue);
           if (same == false) {
             randomCardsData[i] = random;

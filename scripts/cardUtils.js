@@ -1,4 +1,4 @@
-export function getRandomCardData(filterProperty, filterValues = [], includeFilter = true, yearRange = [], includeYear = true) {
+export function getRandomCardData(filterProperty = [], filterValues = [], includeFilter = true, yearRange = [], includeYear = true) {
     return fetch('card_data/card_data.json')
       .then(response => {
         if (!response.ok) {
@@ -8,13 +8,10 @@ export function getRandomCardData(filterProperty, filterValues = [], includeFilt
       })
       .then(data => {
         const cardDataArray = data.data;
-        const numCards = cardDataArray.length;
   
         let filteredCards = cardDataArray;
-        //console.log(yearRange.length)
-        // Filter by year range
+
         if (yearRange.length == 2) {
-          //console.log("PareYear");
           const startYear = parseInt(yearRange[0]);
           const endYear = parseInt(yearRange[1]);
   
@@ -32,18 +29,20 @@ export function getRandomCardData(filterProperty, filterValues = [], includeFilt
             }
           }
         }
-  
-        // filter by card values
-        if (filterProperty != "noFilter") {
+
+        if(filterProperty.length != 0){
           if (includeFilter) {
-            filteredCards = filteredCards.filter(card => filterValues.includes(card[filterProperty]));
+            filterProperty.forEach(element => {
+              filteredCards = filteredCards.filter(card => filterValues.includes(card[element]));
+            });
           } else {
-            filteredCards = filteredCards.filter(card => !filterValues.includes(card[filterProperty]));
+            filterProperty.forEach(element => {
+              filteredCards = filteredCards.filter(card => !filterValues.includes(card[element]));
+            });
           }
         }
   
         const randomIndex = Math.floor(Math.random() * filteredCards.length);
-        //console.log('Random Card Data:', filteredCards[randomIndex]);
         return filteredCards[randomIndex];
       })
       .catch(error => {
@@ -152,3 +151,54 @@ export function getRandomCardData(filterProperty, filterValues = [], includeFilt
     return result;
   
   }
+
+
+  export function getRandomSimiliarCard(cardType) {
+    switch (cardType) {
+        // Main Deck Types
+        case "Effect Monster":
+          return ['Effect Monster'];
+        case "Flip Effect Monster":
+        case "Flip Tuner Effect Monster":
+        case "Gemini Monster":
+        case "Normal Monster":
+        case "Normal Tuner Monster":
+        case "Ritual Effect Monster":
+        case "Ritual Monster":
+            return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
+
+        // Spell and Trap Cards
+        case "Spell Card":
+        case "Trap Card":
+            return ['effect', 'cardName', 'art'];
+
+        // Extra Deck Types
+        case "Fusion Monster":
+        case "Synchro Monster":
+        case "Synchro Tuner Monster":
+            return ['attribute', 'level', 'effect', 'cardName', 'art', 'attackDef', 'type'];
+        
+        
+        case "XYZ Monster":
+        case "XYZ Pendulum Effect Monster":       
+        case "Synchro Pendulum Effect Monster": 
+        case "Pendulum Effect Fusion Monster":      
+        case "Pendulum Effect Monster":
+        case "Pendulum Effect Ritual Monster":
+        case "Pendulum Flip Effect Monster":
+        case "Pendulum Normal Monster":
+        case "Pendulum Tuner Effect Monster":
+            return ['attribute', 'level', 'cardName', 'art', 'attackDef', 'type'];
+
+        case "Link Monster":
+            return ['attribute', 'effect', 'cardName', 'art', 'attackDef', 'type'];
+        // Other Types
+        case "Skill Card":
+            return ['cardName', 'art', 'effect'];
+        case "Token":
+            return ['attribute', 'level', 'cardName', 'art', 'attackDef', 'type'];
+
+        default:
+            return ['cardName', 'art'];
+    }
+}

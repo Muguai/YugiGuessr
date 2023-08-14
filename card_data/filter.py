@@ -24,9 +24,10 @@ for item in data['data']:
             if isinstance(misc_info, list) and len(misc_info) > 0:
                 misc_info = misc_info[0]
                 misc_info = {
-                    'tcg_date': misc_info.get('tcg_date'),
-                    'ocg_date': misc_info.get('ocg_date')
+                    'tcg_date': misc_info.get('tcg_date')
                 }
+                if(misc_info['tcg_date'] is None):
+                    continue
                 item['misc_info'] = [misc_info]
 
         # Remove 'inkmarkers', 'linkval', and 'scale' if present
