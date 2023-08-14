@@ -89,15 +89,19 @@ export async function getAllOptions(questionEnum, cardData, randomCardData) {
 
     switch (questionEnum) {
         case "attribute":
-            optionsArray.push(cardData.attribute);
+            const attribute = cardData.attribute === null || cardData.attribute === undefined ? "None" : cardData.attribute;
+            optionsArray.push(attribute);
             for (var i = 0; i < 2; i++) {
-                optionsArray.push(randomCardData[i].attribute);
+                const randomAttribute = randomCardData[i].attribute === null || randomCardData[i].attribute === undefined ? "None" : randomCardData[i].attribute;
+                optionsArray.push(randomAttribute);
             }
             break;
         case "level":
-            optionsArray.push(cardData.level);
+            const level = cardData.level === null || cardData.level === undefined ? 0 : cardData.level;
+            optionsArray.push(level);
             for (var i = 0; i < 2; i++) {
-                optionsArray.push(randomCardData[i].level);
+                const randomLevel = randomCardData[i].level === null || randomCardData[i].level === undefined ? 0 : randomCardData[i].level;
+                optionsArray.push(randomLevel);
             }
             break;
         case "effect":
@@ -107,9 +111,11 @@ export async function getAllOptions(questionEnum, cardData, randomCardData) {
             }
             break;
         case "cardName":
-            optionsArray.push(cardData.name);
+            const name = cardData.name === null || cardData.name === undefined ? "" : cardData.name;
+            optionsArray.push(name);
             for (var i = 0; i < 2; i++) {
-                optionsArray.push(randomCardData[i].name);
+                const randomName = randomCardData[i].name === null || randomCardData[i].name === undefined ? "" : randomCardData[i].name;
+                optionsArray.push(randomName);
             }
             break;
         case "art":
@@ -119,14 +125,20 @@ export async function getAllOptions(questionEnum, cardData, randomCardData) {
             }
             break;
         case "attackDef":
-            optionsArray.push(cardData.atk + "/" + cardData.def);
+            const atk = cardData.atk  === null || cardData.atk === undefined ? 0 : cardData.atk;
+            const def = cardData.def  === null || cardData.def === undefined ? 0 : cardData.def;
+            optionsArray.push(atk + "/" + def);
             for (var i = 0; i < 2; i++) {
-                optionsArray.push(randomCardData[i].atk + "/" + randomCardData[i].def);
+                const randomAtk = randomCardData[i].atk  === null || randomCardData[i].atk === undefined ? 0 : randomCardData[i].atk;
+                const randomDef = randomCardData[i].def  === null || randomCardData[i].def === undefined ? 0 : randomCardData[i].def;
+                optionsArray.push(randomAtk+ "/" + randomDef);
             }
             break;
         case "type":
-            optionsArray.push(cardData.race);
+            const race = cardData.race === null || cardData.race === undefined ? "None" : cardData.race;
+            optionsArray.push(race);
             for (var i = 0; i < 2; i++) {
+                const randomRace = randomCardData[i].race === null || randomCardData[i].race === undefined ? "None" : randomCardData[i].race;
                 optionsArray.push(randomCardData[i].race);
             }
             break;
@@ -134,6 +146,7 @@ export async function getAllOptions(questionEnum, cardData, randomCardData) {
             break;
     }
 
+  
     return optionsArray;
 }
 

@@ -46,8 +46,12 @@ export async function generateRandomCard() {
     const data = await getRandomCardData(guessfilterProperty, guessfilterValues, guessincludeFilter, [chosenStartYear, chosenEndYear], true);
 
     //console.log(data.misc_info[0].tcg_date + " This is the start " + chosenStartYear + " tis is the end " + chosenEndYear);
-    const cardId = data.id;
-    const cardName = data.name;
+
+    if(data.id === undefined || data.id === null)
+      generateRandomCard();
+  
+    const cardId = data.id ;
+    const cardName = data.name === undefined || data.id === null ? "No Name" : data.name;
     //const cardImage = 'https://www.dropbox.com/s/bmh7xq8fs283ijj/2511.jpg?dl=0';
     const cardImage = `https://fh-yugiguessr-images.s3.eu-north-1.amazonaws.com/card_images/${cardId}.jpg`;
     const cardBack = `Card-back.png`;
