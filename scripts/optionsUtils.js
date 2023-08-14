@@ -70,11 +70,6 @@ export function makeOptions(optionsContainer, options, containsImage, enumValue)
               <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[1]}</div>
               <div class="option text-center ${containsImage ? 'center' : 'overflow-auto'}">${options[2]}</div>
               `;
-
-    const optionElements = optionsContainer.querySelectorAll('.option');
-    optionElements.forEach(option => {
-        option.addEventListener('click', () => handleOptionClick(option));
-    });
 }
 
 export async function getAllOptions(questionEnum, cardData, randomCardData) {
