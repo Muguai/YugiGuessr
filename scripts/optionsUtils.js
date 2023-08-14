@@ -36,7 +36,7 @@ export function handleOptionClick(option) {
                     options[i].style.border = "5px solid green"
             }
 
-            console.log()
+            console.log("wronggg");
             option.style.border = "5px solid red";
             return false;
         }
@@ -53,7 +53,7 @@ export function handleOptionClick(option) {
                 options[i].style.border = "5px solid green";
         }
         //options[correctAnswer].style.border = "4px solid green";
-        console.log()
+        console.log("wronggg")
         option.style.border = "5px solid red";
         return false;
 

@@ -19,31 +19,46 @@ async function gameLoop() {
 
 
     setTimeout(() => {
+        setOptionsListeners();
+    }, 1700);
+
+
+}
+
+function setOptionsListeners() {
+
+    setTimeout(() => {
         const options = document.getElementsByClassName("option");
+        console.log(options.length)
+        if(options.length < 1)
+            setOptionsListeners();
+        
         for (let i = 0; i < options.length; i++) {
-            console.log("Hehe")
+
+            if(options[i] === undefined || options[i] === null)
+                setOptionsListeners();
 
             options[i].addEventListener("click", () => {
+                console.log("EventListener Here");
                 const isCorrect = handleOptionClick(options[i]);
 
-                if(isCorrect){
+                if (isCorrect) {
                     setTimeout(() => {
                         questionNum += 1;
                         gameLoop();
                     }, 1000);
-                }else{
+                } else {
                     setTimeout(() => {
                         endOfGame();
                     }, 1000);
                 }
             });
         }
-    }, 1700);
-
-
+    
+    }, 50);
 }
 
-async function endOfGame(){
+async function endOfGame() {
     console.log("endgame");
 
     const existingCard = document.getElementById('spawnedContainer');
@@ -77,7 +92,7 @@ async function endOfGame(){
     */
     const blurOptionSelect = document.getElementById('blurOptionSelect');
     let bluredValue = blurOptionSelect.value;
-   
+
     const blurValueElement = document.getElementById('blurValue');
     blurValueElement.textContent = capitalizeFirstLetter(bluredValue);
 
